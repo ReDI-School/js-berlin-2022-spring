@@ -30,7 +30,7 @@ const nextDate = getNextDate();
 const template =
 `<!-- .slide: id="lesson${nextLesson}" -->
 
-# Basic Frontend - Fall 2021
+# Basic Frontend - Spring 2022
 
 Lesson ${nextLesson}, ${nextDate.getDay() == 2 ? "Tuesday" : "Thursday"}, ${nextDate.getFullYear()}-${(nextDate.getMonth() + 1).toString().padStart(2, '0')}-${nextDate.getDate().toString().padStart(2, '0')}
 
