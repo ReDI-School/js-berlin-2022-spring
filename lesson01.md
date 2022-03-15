@@ -349,32 +349,3 @@ Why would we dedicate an entire data type for just two values?
 
 All of these can only return `true` or `false`
 
----
-
-### Let's practice
-
-Use JavaScript to check if:
-
-* you are older than me (I'm 44)
-* your first name is the same as mine
-
----
-
-### Solution
-
-```js
-26 > 44                // false - I am older
-"Harald" === "Owen"    // false - not the same first name
-```
-
----
-
-### Logical Operators
-
-These operators work on **Boolean** values:
-
-* `!` Logical NOT
-* `&&` Logical AND
-* `||` Logical OR
-
-But that is material for the next lesson.
