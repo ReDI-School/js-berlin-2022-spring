@@ -319,7 +319,7 @@ if (food === 'pizza') {
 ```
 
 ```js
-if (temperature < 20) {
+if (temperature > 20) {
   document.body.textContent = "Yay, it's warm again!";
 }
 ```
@@ -383,7 +383,7 @@ Code blocks contain the code between `{` and `}`, and should be indented for bet
 if (language === "German") {
   // In VSCode, you can indent code by pressing the "Tab" key,
   // or right-click and choose "Format Document"
-  console.log("Guten Tag");
+  document.body.textContent = "Guten Tag";
 }
 ```
 
