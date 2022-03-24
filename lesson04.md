@@ -18,6 +18,22 @@ if (condition) {
 
 ---
 
+### console.log()
+
+We need a way of printing information to the console when our code runs, for debugging purposes:
+
+```js
+let name = "Owen";
+console.log(name);
+
+let shouldSayHello = true;
+if (shouldSayHello) {
+    console.log("Hello");
+}
+```
+
+---
+
 ### If-Else
 
 Very often, we would like to conditionally execute something, and otherwise execute something else:
@@ -208,53 +224,7 @@ if (condition3) {
 
 ---
 
-### Task
-
-Let's go shopping. Create a variable containing the budget (try with `5`, `7`, `8` and `10`).
-
-If we have enough money left, buy milk (2 EUR).
-If we have enough money left, buy cheese (4 EUR).
-If we have enough money left, buy bread (2 EUR).
-If we have enough money left and we bought bread, buy butter (1 EUR).
-
-Output to console what we bought and how much money is left.
-
----
-
-### Shopping exercise solution
-
-```js
-let money = 32;
-let milkPrice = 2;
-let cheesePrice = 4;
-let breadPrice = 2;
-let butterPrice = 1;
-
-if (money >= milkPrice) {
-  money -= milkPrice;
-  console.log("bought milk");
-}
-
-if (money >= cheesePrice) {
-  money -= cheesePrice;
-  console.log("bought cheese");
-}
-
-if (money >= breadPrice) {
-  money -= breadPrice;
-  console.log("bought bread");
-  if (money >= butterPrice) {
-    money -= butterPrice;
-    console.log("bought butter");
-  }
-}
-
-console.log("Money left:", money);
-```
-
----
-
-### Ice cream exercise 
+### Buying ice cream
 
 You have to go to the supermarket and buy ice-cream for your the party of your best friend.
 
@@ -296,10 +266,9 @@ In the first shopping exercise we need to buy as many things as possible, in a s
 
 In the ice cream exercise we just need to choose one flavor, the first one that is available in an order of preference.
 
-
 ---
 
-### Bonus Task
+### Homework
 
 You're a developer in a bookstore. Can you finish all the tasks in this JavaScript file?
 
