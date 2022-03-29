@@ -9,186 +9,420 @@ Lesson 5, Tuesday, 2022-03-29
 ### Recap
 
 ```js
-let x = 1 + 2 * 3;
-```
-
-What is the value of `x`?
-
-7 (multiplication has higher precedence than addition)
-<!-- .element: class="fragment" -->
-
----
-
-### Recap
-
-```js
-let x = 1 + 2 + 3;
-```
-
-What is computed first, `1 + 2` or `2 + 3`?
-
-1 + 2 (Addition operator has left-to-right associativity)
-<!-- .element: class="fragment" -->
-
----
-
-### Recap
-
-```js
-x = y = z;
-```
-
-What is computed first, `x = y` or `y = z`?
-
-y = z (Assignment operator has right-to-left associativity)
-<!-- .element: class="fragment" -->
-
----
-
-### Compound assignment operators
-
-| Compound operator | Same as |
-| ----------------- | ------  |
-| `x += 42` | `x = x + 42` |
-| `x -= 42` | `x = x - 42` |
-| `x /= 42` | `x = x / 42` |
-| `x *= 42` | `x = x * 42` |
-| `x **= 42` | `x = x ** 42` |
-
-Compound assignment operators are shorter ways of applying an operator on the variable and assigning the result back to the variable.
-
----
-
-### Increment operator
-
-To add `1` to a variable, we can use the increment operator `++`, e.g. `x++`:
-
-```js
-let x = 42;
-x = x + 1; // x is now 43
-x += 1;    // x is now 44
-x++;       // x is now 45
+if (condition) {
+  // block of code that
+  // will run ONLY if
+  // condition is true
+}
 ```
 
 ---
-
-### Decrement operator
-
-To subtract `1` from a variable, we can use the decrement operator:
-
-```js
-let x = 42;
-x = x - 1; // x is now 41
-x -= 1;    // x is now 40
-x--;       // x is now 39
-```
-
----
-
-There are also prefix operators `++x` and `--x` which we don't use in this course.
-You can find the subtle difference on [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment)
-
----
-
-### Recap - if statements
-
-What is an `if` statement? When do we use it?
-
-If we want to conditionally execute some code, e.g. only if a certain condition is true.
-<!-- .element: class="fragment" -->
-
----
-
-### Recap
 
 ```js
 if (condition) {
-    console.log("yay, condition is true");
-}
-```
-
----
-
-### Recap - block scope
-
-Remember, variables defined in code blocks (`{}`) are only accessible within those blocks:
-
-```js
-if (condition) {
-    let hour = 18;
-}
-
-console.log("hour is", hour); // ERROR!
-```
-
----
-
-### Abdullah's game
-
-Abdullah invented a game where the player with the highest score wins. The score is the player's height (in cm) plus five times the player's age.
-
-1. Create variables for the heights and ages for you and a person next to you
-1. Calculate the scores for you and your neighbor
-1. Decide who wins, output the winner and their score to the console. Remember: there can be a draw (both players with the same score).
-
----
-
-```js
-let myHeight = 160;
-let myAge = 44;
-let neighborHeight = 170;
-let neighborAge = 26;
-let myScore = myHeight + 5 * myHeight;
-let neighborScore = neighborHeight + 5 * neighborHeight;
-if (myScore > neighborScore) {
-    console.log("I win with", myScore, "points");
-}
-if (neighborScore > myScore) {
-    console.log("Neighbor wins with", neighborScore, "points");s
-}
-if (myScore === neighborScore) {
-    console.log("It's a draw!");
-}
-```
-
----
-
-### If-Else
-
-Very often, we would like to conditionally execute something, and otherwise execute something else:
-
-```js
-if (budget >= 60) {
-    console.log("Let's go to cinema!");
-}
-if (budget < 60) {
-    console.log("Let's go to the park!");
-}
-```
-
----
-
-### If...Else
-
-```js
-if (condition) {
-  // some code
-  // will execute if condition is true
+  // block of code that
+  // will run ONLY if
+  // condition is true
 } else {
-  // other code
-  // will execute if condition is false
+  // when will this execute??
+}
+```
+
+
+The `else` block will execute only if `condition` is `false`.
+<!-- .element: class="fragment" -->
+
+---
+
+```js
+if (condition) {
+  // block of code that will run
+  // ONLY if condition is true
+} else if (secondCondition) {
+  // when will this execute??
+} else {
+  // ..
+}
+```
+
+The `else if` block will execute only if `secondCondition` is `true` **and** all conditions above are `false`.
+<!-- .element: class="fragment" -->
+
+---
+
+### rules of if, else if, else
+
+```js
+if (condition1) {
+  // some code ...
+} else if (condition2) {
+  // some other code ...
+} else if (condition3) {
+  // code, code, code ...
+} else {
+  // even more code ...
+}
+// JavaScript will continue from here.
+```
+
+---
+
+### rules of if else if else
+
+- JavaScript will go through the if/else-if/else statements from top to bottom.
+- In our example, it will check condition1, then condition2, then condition3…
+- If one of the conditions evaluates to true, JavaScript will execute it’s code block AND IGNORE EVERYTHING ELSE
+
+
+---
+
+## Series of separate if statements
+
+If we put a series of `if` statements one after the other, they will be evaluated independently of one another.
+
+```js
+if (condition1) {
+    // do this
+}
+
+if (condition2) {
+    // do also this
+}
+
+if (condition3) {
+    // and do also this
 }
 ```
 
 ---
 
-### If-Else
+# Functions
+
+<!-- .slide: id="functions" -->
+
+---
+
+### functions
+
+A function is a reusable block of code.
+
+A very simple function would be:
 
 ```js
-if (budget >= 60) {
-    console.log("Let's go to cinema!");
-} else {
-    console.log("Let's go to the park!");
+function myFunction() {
+  console.log("I am in a function!");
+}
+```
+
+You can call the function like this:
+
+```js
+myFunction();
+```
+
+---
+
+you can write any amount of code you want in the function:
+
+```js
+function sayHello() {
+  console.log("Hello There!");
+
+  console.log("...");
+
+  console.log("General Kenobi!");
+}
+
+sayHello();
+```
+
+---
+
+A function can contain any kind of code:
+
+```js
+function isCold() {
+    let temperature = 10;
+    if (temperature < 10) {
+        console.log("it's cold outside");
+    } else {
+        console.log("it's not that cold");
+    }
+}
+
+isCold();
+```
+
+---
+
+### Quiz
+
+What does the following code output to console?
+
+```js
+function output42() {
+  console.log("42");
+}
+```
+
+Answer: Nothing, because we never _call_ the function
+<!-- .element: class="fragment" -->
+
+---
+
+### Quiz
+
+What does the following code output to console?
+
+```js
+function output42() {
+  console.log("42");
+}
+
+output42();
+output42();
+```
+
+Answer: "42" and "42"
+<!-- .element: class="fragment" -->
+
+---
+
+### Function definition and execution
+
+It's important to distinguish between 2 parts when working with functions:
+
+1. function definition (also called function declaration)
+1. function execution (calling the function) 
+
+---
+
+### Function definition and execution
+
+```js
+// this is the function definition
+function sayHi() {
+    console.log('Hi');
+}
+
+// this is the function call
+sayHi();
+```
+
+We always need to define a function in order for us to call it.
+
+---
+
+### Function definition
+
+There are 3 mandatory parts in a function definition:
+
+1. the `function` keyword
+1. the `name` of the function we are defining, followed by parenthesis
+1. the function `body`, surrounded by curly braces
+
+---
+
+### Function execution
+
+To call (execute) a function we need to write its `name` followed by parenthesis.
+
+---
+
+### Practice
+
+
+1. create a function called `hello` that outputs "Hello, [your name]"
+1. create a function called `sum`. 
+    - declare 2 variables `a` and `b` inside of it 
+    - assign the 2 variables any numerical value you want
+    - output the sum of `a` and `b`
+1. create a function called `square`
+    - declare a variable `n` inside of it
+    - assign a numerical value to it
+    - output the square of `n`
+
+Call the 3 functions and check the result in the console.
+
+<!-- .slide: style="font-size:70%;" -->
+---
+
+### Following the flow or a program with functions
+
+```js
+console.log('I go first');
+
+function sayHey() {
+    console.log('Hey!'); // <- when do we see this in the console?
+}
+
+console.log('I go second');
+sayHey(); // <- what do we see here in the console?
+console.log('I go last');
+```
+
+
+---
+
+## Function parameters and arguments
+
+Let's say we want a few variations of the function `sayHello`. We might want another function that says "hi", another one that says "hey" and a last one that says "hallo".
+
+How can we do it?
+
+---
+
+### Function parameters and arguments
+
+```js
+function sayHello() {
+    console.log('hello');
+}
+
+function sayHey() {
+    console.log('hey');
+}
+
+function sayHi() {
+    console.log('hi');
+}
+
+function sayHallo() {
+    console.log('hallo');
+}
+
+sayHello();
+sayHey();
+sayHi();
+sayHallo();
+```
+
+---
+
+### Function parameters and arguments
+
+The code works, but we are basically writing the same function 4 times and just changing a string inside.
+
+We normally want to avoid useless repetitions.
+
+Luckily, functions have the options to accept something called `parameters` that let us do just that.
+
+---
+
+### Function parameters and arguments
+
+```js
+function say(text) {
+    console.log(text);
+}
+
+say('hello');
+say('hi');
+say('hey');
+say('hallo');
+```
+
+- `text` is a function `parameter`
+- "hello", "hi", "hey", "hallo" are `arguments`. In each function call they will be assigned to the `text` parameter
+
+---
+
+### Multiple parameters
+
+A function can have any number of parameters
+
+```js
+function multipleParameters(parameter1, parameter2, parameter3) {
+    console.log(parameter1, parameter2, parameter3);
+}
+
+multipleParameters("argument1", "argument2", "argument3");
+```
+
+Each argument will be assigned to the corresponding parameter in order, from left to right
+
+---
+
+### Multiple parameters
+
+```js
+function greet(greeting, name) {
+    console.log(greeting, name);
+}
+
+greet("hey", "Harald");
+greet("hello", "Sevtap");
+```
+
+---
+
+## Returning values
+
+So far we've written functions only to output values to the console.
+
+Most of the times, we use functions to make a calculation and we want to use the result of that calculation outside of the function.
+
+We can use the `return` keyword for that.
+
+```js
+function giveMe5() {
+  return 5;
+}
+
+let number = giveMe5();
+console.log(number); // 5
+```
+
+---
+
+### Returning values: example
+
+```js
+function score(age, height) {
+    return age + (height * 5);
+}
+
+function winner(player1Score, player2Score) {
+    if (player1Score > player2Score) {
+        console.log("player 1 won!");
+    } else if (player2Score > player1Score) {
+        console.log("player 2 won!");
+    } else {
+        console.log("it's a draw!");
+    }
+}
+
+let jimScore = score(40, 164);
+let jessicaScore = score(27, 181);
+winner(jimScore, jessicaScore);
+```
+
+---
+
+### Returning values
+
+Once a function returns, no other code within the function will be executed:
+
+```js
+function giveMe5() {
+  return 5;
+  console.log("I returned 5"); // CODE WILL NEVER EXECUTE!!!
+}
+```
+
+---
+
+### Returning values
+
+A function can have multiple `return` statements. The first `return` statement exits the function:
+
+```js
+function isCold(temperature) {
+  if (temperature < 15) {
+    return true;
+  } else {
+    return false;
+  }
 }
 ```
 
@@ -196,120 +430,43 @@ if (budget >= 60) {
 
 ### Quiz
 
-Can you change the following code to `if..else`?
+What is the value of `result`?
 
 ```js
-if (temperature > 25) {
-  console.log("Go swimming");
+function giveMe5() {
+  return 5;
 }
-if (temperature <= 25) {
-  console.log("Go biking");
-}
+
+let result = giveMe5() * giveMe5();
+```
+
+Answer: 25
+<!-- .element: class="fragment" -->
+
+---
+
+### Exercise 1
+
+Write a `min` function that returns the smaller of the two numbers. If the 2 values are the same, it will return the first value.
+
+```js
+min(1, 2);    // should return 1
+min(100, 99); // should return 99
+min(-10, 0);  // should return -10
 ```
 
 ---
 
-### Solution
+### Exercise 2
 
-```js
-if (temperature > 25) {
-  console.log("Go swimming");
-} else {
-  console.log("Go biking");
-}
-```
+Write a function that takes name of a person, their age, and the language they speak, and returns a string that introduces this person.
+
+Example:
+
+John, 18, English &#8594; **"Hello! my name is John, I am 18 years old and I speak English."**
 
 ---
 
-### If...Else-If...Else example
+### Extra exercises
 
-```js
-if (day === 'Saturday') {
-  console.log('Do all the shopping.');
-} else if (day === 'Sunday') {
-  console.log('Relax!');
-} else {
-  console.log('Wake up and go to work!');
-}
-```
-
-Only one code block is executed in the `if..else if..else`. To determine which block, JavaScript will evaluate the conditions from top to bottom. The first condition that evaluates to true determines the block to be executed. All the other code blocks are ignored.
-
----
-
-You can use [code-to-graph](https://crubier.github.io/code-to-graph/?code=aWYgKGRheSA9PT0gJ1NhdHVyZGF5JykgewogIGNvbnNvbGUubG9nKCdEbyBhbGwgdGhlIHNob3BwaW5nLicpOwp9IGVsc2UgaWYgKGRheSA9PT0gJ1N1bmRheScpIHsKICBjb25zb2xlLmxvZygnUmVsYXghJyk7Cn0gZWxzZSB7CiAgY29uc29sZS5sb2coJ1dha2UgdXAgYW5kIGdvIHRvIHdvcmshJyk7Cn0) for visualization:
-
-![if-else](images/if-else.svg)<!-- .element height="500px" width="100%" style="background-color: #999999" -->
-
----
-
-### Task
-
-* Describe the weather based on the temperature:
-  * Above 30
-  * Above 20
-  * Above 5
-  * Everything else
-
----
-
-<!-- Only if there's time after the exercise -->
-
-### Is this correct?
-
-```js
-let temperature = 7;
-
-if (temperature > 20) {
-  console.log("it's warm");
-} else if (temperature > 30) {
-  console.log("too hot!!!");
-} else if (temperature > 5) {
-  console.log("perfect.");
-} else {
-  console.log("it's a bit chilly.");
-}
-```
-
-Look at it in [code-to-graph](https://crubier.github.io/code-to-graph/?code=bGV0IHRlbXBlcmF0dXJlID0gNzsKCmlmICh0ZW1wZXJhdHVyZSA-IDIwKSB7CiAgY29uc29sZS5sb2coIml0J3Mgd2FybSIpOwp9IGVsc2UgaWYgKHRlbXBlcmF0dXJlID4gMzApIHsKICBjb25zb2xlLmxvZygidG9vIGhvdCEhISIpOwp9IGVsc2UgaWYgKHRlbXBlcmF0dXJlID4gNSkgewogIGNvbnNvbGUubG9nKCJwZXJmZWN0LiIpOwp9IGVsc2UgewogIGNvbnNvbGUubG9nKCJpdCdzIGEgYml0IGNoaWxseS4iKQp9Cg), can you find the bug?
-
-Try with a temperature of 35, what does it print? <!-- .element: class="fragment" -->
-
----
-
-### Correct solution
-
-```js
-let temperature = 35;
-
-if (temperature > 30) {
-  console.log("too hot!!!");
-} else if (temperature > 20) {
-  console.log("it's warm");
-} else if (temperature > 5) {
-  console.log("perfect.");
-} else {
-  console.log("it's a bit chilly.");
-}
-```
-
----
-
-### Task
-
-Let's go shopping. Create a variable containing the budget (try with `5`, `7`, `8` and `10`).
-
-If we have enough money left, buy milk (2 EUR).
-If we have enough money left, buy cheese (4 EUR).
-If we have enough money left, buy bread (2 EUR).
-If we have enough money left and we bought bread, buy butter (1 EUR).
-
-Output to console what we bought and how much money is left.
-
----
-
-### Task
-
-You're a developer in a bookstore. Can you finish all the tasks in this JavaScript file?
-
-[main.js](2021-09-28-bookstore/main.js)
+Try to as many exercises as possible from the ones listed [here](https://github.com/ReDI-School/js-berlin-2021-fall/tree/main/exercises/2021-10-07)

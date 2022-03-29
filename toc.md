@@ -3,6 +3,7 @@
 1. [Basic Data Types and Operators](#basic-data-types)
 1. [Variables](#variables)
 1. [If Statements](#if)
+1. [Functions](#functions)
 
 Direct link to lessons: [1](#lesson1) [2](#lesson2) [3](#lesson3) [4](#lesson4) [5](#lesson5)
 
