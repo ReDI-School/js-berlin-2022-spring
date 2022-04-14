@@ -36,7 +36,7 @@ To get a random number between zero and 4, you can use:
 
 ```js
 function getRandomInt() {
-  return Math.floor(Math.random() * 4);
+  return Math.floor(Math.random() * 5);
 }
 ```
 
