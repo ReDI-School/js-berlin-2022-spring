@@ -10,6 +10,7 @@ Lesson 11, Thursday, 2022-04-21
 
 - Recap: loop concepts and `while` loop
 - `for` loop
+- Remainder operator
 
 ---
 
@@ -116,6 +117,23 @@ while (i <= 10) {
 }
 console.log('Sum is:', sum); // 55
 ```
+
+---
+
+### Review
+
+So far, our `while` loops have followed the same basic structure:
+```js
+let i = 1; // initialization
+while (i <= 10) {  // condition
+    // do something
+
+    i++; // update
+}
+```
+We can see that we are often initializing some integer variable before the loop as a counter, and updating the variable at the end of the loop.
+
+But we're programmers... we like to simplify things! Is there a more concise way?
 
 ---
 
