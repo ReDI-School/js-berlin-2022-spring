@@ -234,6 +234,12 @@ Use a for loop and createElement to generate the following HTML on your page:
 
 ---
 
+### Task 2 bonus
+
+Create a button at the top of the page that generates a new element in sequence when clicked, so  "Element 6", "Element 7", and so on.
+
+---
+
 ### Task 3: Create a shopping list app!
 
 It should have one `<input>` field where the user can enter a shopping item. It should have one `<button>`. When the user clicks the button, the text from the `<input>` field should be appended to the shopping list.
