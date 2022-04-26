@@ -200,7 +200,7 @@ Remember our `<body>` tag in the html? `document.body` refers to that element, i
 
 ---
 
-### Exercise 1: Appending elements
+### Task 1: Appending elements
 
 Let's say you have this HTML:
 
@@ -220,7 +220,7 @@ How do you turn it to this from JavaScript?
 
 ---
 
-### Exercise 2: Creating elements in a loop
+### Task 2: Creating elements in a loop
 
 Use a for loop and createElement to generate the following HTML on your page:
 
@@ -234,7 +234,7 @@ Use a for loop and createElement to generate the following HTML on your page:
 
 ---
 
-### Exercise 3: Create a shopping list app!
+### Task 3: Create a shopping list app!
 
 It should have one `<input>` field where the user can enter a shopping item. It should have one `<button>`. When the user clicks the button, the text from the `<input>` field should be appended to the shopping list.
 
