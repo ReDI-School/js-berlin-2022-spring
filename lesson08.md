@@ -152,6 +152,8 @@ Wouldn't it be nice if we could dynamically change that from JavaScript?
 
 ---
 
+<!-- .slide: id="get-element" -->
+
 ### document.getElementById
 
 One way to obtain a variable pointing to a HTML element is `document.getElementById()`:
