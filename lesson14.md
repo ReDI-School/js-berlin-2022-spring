@@ -125,7 +125,7 @@ Given an array of "Movie Titles" show the Titles in a wep page.
 Let's create a new element with the first title in the array
 
 ```js
-const movies = [
+let movies = [
   "The Godfather",
   "The Dark Knight ",
   "The Lord Of The Rings",
@@ -152,7 +152,7 @@ Yes, using a loop to create an element for each of the titles in the array.
 ---
 
 ```js
-const movies = [
+let movies = [
   "The Godfather",
   "The Dark Knight ",
   "The Lord Of The Rings",
