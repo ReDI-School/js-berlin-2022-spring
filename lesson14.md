@@ -79,8 +79,6 @@ for (let i = 0; i < cars.length; i++) {
 
 ---
 
-<!-- .slide: id="create-element" -->
-
 ### Recap: document.createElement
 
 Basic usage:
@@ -103,6 +101,8 @@ document.body.appendChild(myDiv); // 3
 3. `appendChild` add an element to the end of the list of children of a specific parent element. Here, we append it to the document's `<body>`.
 
 ---
+
+<!-- .slide: id="create-element-arrays" -->
 
 ### document.createElement + Arrays
 
