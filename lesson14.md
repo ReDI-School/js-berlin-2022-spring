@@ -170,7 +170,28 @@ for (let i = 0; i < movies.length; i++) {
 
 ---
 
-### Exercise 1
+### Example 2: Dropdown
+
+```js
+let array = ["Volvo", "Saab", "Mercades", "Audi"];
+
+//Create and append select list
+let selectList = document.createElement("select");
+selectList.id = "mySelect";
+document.body.appendChild(selectList);
+
+//Create and append the options
+for (let i = 0; i < array.length; i++) {
+  let option = document.createElement("option");
+  option.value = array[i];
+  option.text = array[i];
+  selectList.appendChild(option);
+}
+```
+
+---
+
+### Task 1
 
 Given an array of movie posters urls, create a web page that shows each poster.
 
@@ -207,7 +228,7 @@ let moviePosters = [
 
 ---
 
-### Excercise 2
+### Task 2
 
 Given an array of movie objects:
 
@@ -268,7 +289,7 @@ let movieObjs = [
 
 ---
 
-### Excercise 3
+### Task 3
 
 Let's say we already have this elements in our `html` body
 
@@ -298,7 +319,7 @@ Create a new `div` element that contains two elements inside the `div` (children
 
 ### Bonus
 
-Continue with Excercise 3, add an `onclick` event to each of the movie images to redirect the user to the movie trailer.
+Continue with Task 3, add an `onclick` event to each of the movie images to redirect the user to the movie trailer.
 
 You could also add style (widht, height, padding, background color, etc) to the created elements so it looks more friendly to the user.
 
