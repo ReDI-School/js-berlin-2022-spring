@@ -16,7 +16,7 @@ XO game (Tick Tack Toe)
 
 Drum instrument
 
-Bong game (https://codepen.io/gdube/pen/JybxxZ)
+Pong game (https://codepen.io/gdube/pen/JybxxZ)
 
 # Marcus + Grasi
 
